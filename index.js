@@ -11,7 +11,9 @@ function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
 }
 
 function deleteFromDriverByKey(driver, key) {
-
+  const cloneDriver = driver.assign({}, driver)
+  delete cloneDriver.key
+  return cloneDriver
 }
 
 function destructivelyDeleteFromDriverByKey(driver, key) {
